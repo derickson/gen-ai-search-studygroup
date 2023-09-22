@@ -125,7 +125,7 @@ Once you've saved the requirements.txt file you don't have to worry about losing
 
 ```bash
 rm -rf env ## obviously be very careful with this command
-python -m venv env
+python3 -m venv env
 source env/bin/activate
 pip install -r requirements.txt ## get the specific requirements from your file
 ```
@@ -170,3 +170,13 @@ secret = os.environ["MY_SECRET"]
 ## print a line of text with that secret to standard out
 print(f"That's my secret, Cap: {secret}")
 ```
+
+if you cut and paste the above code into a file called ```app.py``` you can then run with 
+
+```bash
+python app.py
+```
+
+as long as your enviroment variables are all setup the printout should have your secret.
+
+If you get an error talking about how dotenv or load_dotenv, it means your virtual enviornment and pip step to install dotenv has not been done correctly.
