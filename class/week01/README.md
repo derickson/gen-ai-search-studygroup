@@ -98,7 +98,7 @@ https://stackoverflow.com/questions/1534210/use-different-python-version-with-vi
 
 There is a data science project called conda that does a lot of what venv does package management for multiple languages used in data science, including Python, simulataneousy.  If you know what you are doing, by all means use conda.
 
-### Step 4 - using pip
+## Step 4 - using pip
 
 Once we have activated our Python virtual environment it is now safe to start installing libraries.  Pip comes with python and is the main package installer.
 
