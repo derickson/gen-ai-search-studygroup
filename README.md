@@ -8,6 +8,8 @@ While it has never been easier to learn search and AI, it's hard to find know wh
 
 [Youtube - Should you Learn Javascript?](https://www.youtube.com/watch?v=Uo3cL4nrGOk)
 
+So we are going to learn using Python and StreamLit. What we make won't be production quality ... but we will get ourselves Proof of Concept capable.
+
 The goal of this repo is to make weekly content to help get a curious engineer or software architect **hands-on**. We'll do weekly self-paced exercises and goals to get up to speed using Elastic, Python, and newer technology like semantic search and Large Language Models
 
 We won't teach Python here, but we'll take things slowly and keep it as simple as possible so those new to Python don't get left behind. 
