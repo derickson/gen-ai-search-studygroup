@@ -26,3 +26,4 @@ We won't teach Python here, but we'll take things slowly and keep it as simple a
 ## Weeks so far
 
 * [Week 1](class/week01/README.md) - Environment Setup
+* [Week 2](class/week02/README.md) - Elasticsearch Python
