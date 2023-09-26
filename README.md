@@ -23,7 +23,8 @@ We won't teach Python here, but we'll take things slowly and keep it as simple a
 / class/week01 - self contained resources and guides for this week's learning
 ```
 
-## Weeks so far
+## Week by Week Materials
 
 * [Week 1](class/week01/README.md) - Environment Setup
 * [Week 2](class/week02/README.md) - Elasticsearch Python
+* [Week 3](class/week03/README.md) - Streamlit

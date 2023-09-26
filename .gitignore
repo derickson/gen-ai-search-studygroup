@@ -1,6 +1,7 @@
 
 env
 *.pickle
+class/week03/app 
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
