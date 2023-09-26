@@ -6,6 +6,9 @@
 * Start a multi-page Streamlit app
 * Add search facets to our State of the Union App
 
+![What it looks like when done](facets_done.jpg)
+
+
 ## Step 1 - Streamlit Getting Started
 
 Go through the Streamlit.io getting started examples. They are pretty good and will teach you some important concepts we'll use right away to organize a modular streamlit project to host search examples.
@@ -194,8 +197,11 @@ Next we'll change how we render results so that the facets are to the left of th
             administration = result["_source"]["administration"]
             st.markdown(f"<h2><a href='{url}'>{date} - {administration}</a></h2>",unsafe_allow_html=True)
             html_composite = "<p>"
-            for hl in result["highlight"]["text"]:
-                html_composite = html_composite + "<br/>" + custom_escape(hl)
+            if "highlight" in result:
+                for hl in result["highlight"]["text"]:
+                    html_composite = html_composite + "<br/>" + custom_escape(hl)
+            else:
+                html_composite = html_composite + "No highlights<br/>"
             html_composite = html_composite + "</p>"
             st.markdown(html_composite, unsafe_allow_html=True)
 
@@ -213,12 +219,17 @@ We are now rendering the facets.
 Clicking the facets doesn't currently do anything. To have them effect the search we need to build a compound query.  The facet_index we saved into the session state is a delimited value carrying both the field and value sparated by a ```|```
 
 ```python
-    queries = [{
-        "query_string": {
-            "query": input,
-            "default_field": "*"
-        }
-    }]
+    queries = []
+    
+    if input.strip() != "":
+        queries.append({
+            "query_string": {
+                "query": input,
+                "default_field": "*"
+            }
+        })
+    else:
+        queries.append({"match_all": {}})
 
     for key in st.session_state.facet_selections:
         if st.session_state.facet_selections[key]:
@@ -288,12 +299,17 @@ def runKeywordSearch(input):
     
     es = get_es()
 
-    queries = [{
-        "query_string": {
-            "query": input,
-            "default_field": "*"
-        }
-    }]
+    queries = []
+    
+    if input.strip() != "":
+        queries.append({
+            "query_string": {
+                "query": input,
+                "default_field": "*"
+            }
+        })
+    else:
+        queries.append({"match_all": {}})
 
     for key in st.session_state.facet_selections:
         if st.session_state.facet_selections[key]:
@@ -393,8 +409,11 @@ if "search_results" in st.session_state :
             administration = result["_source"]["administration"]
             st.markdown(f"<h2><a href='{url}'>{date} - {administration}</a></h2>",unsafe_allow_html=True)
             html_composite = "<p>"
-            for hl in result["highlight"]["text"]:
-                html_composite = html_composite + "<br/>" + custom_escape(hl)
+            if "highlight" in result:
+                for hl in result["highlight"]["text"]:
+                    html_composite = html_composite + "<br/>" + custom_escape(hl)
+            else:
+                html_composite = html_composite + "No highlights<br/>"
             html_composite = html_composite + "</p>"
             st.markdown(html_composite, unsafe_allow_html=True)
 
