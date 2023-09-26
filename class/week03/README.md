@@ -11,7 +11,7 @@
 
 ## Step 1 - Streamlit Getting Started
 
-Go through the Streamlit.io getting started examples. They are pretty good and will teach you some important concepts we'll use right away to organize a modular streamlit project to host search examples.
+Go through the Streamlit.io getting started examples. They are pretty good and will teach you some important concepts we'll use right away to organize a modular Streamlit project to host search examples.
 
 Do the following ->
  - [ ] [Streamlit Install](https://docs.streamlit.io/library/get-started/installation) - If using Mac/Linux, make sure to pip install into your virtual environment.
@@ -36,7 +36,7 @@ Keep Going through the rest of the getting started guide ->
 Now that we've done the Streamlit tutorial the State of the Union Search app we ran in week 2 : [code link](../week02/app/app.py) isn't that complicated.  
 * When the search button is clicked we run the search and put the search response in a session variable
 * When the session variable is populated we render some search results
-* We HTML escape the data being rendered to the screen to avoid cross site scripting attacks, retoring the ```<strong>``` highlight formatting only. It's unlikely to be a source of an attack here, but we never want to take data from a user or a database and evaluate it as HTML to be rendered by a browser.
+* We HTML escape the data being rendered to the screen to avoid cross-site scripting attacks, restoring the ```<strong>``` highlight formatting only. It's unlikely to be a source of an attack here, but we never want to take data from a user or a database and evaluate it as HTML to be rendered by a browser.
 
 Let's use what we've learned to modify the app from last week's exercise.
 
@@ -62,7 +62,7 @@ mkdir pages
 cp app.py pages/week3_sotfu.py 
 ```
 
-Now edit state of the union to just be a landing page
+Now edit ```app.py``` to just be a landing page
 
 ```python
 import streamlit as st
@@ -76,10 +76,10 @@ import streamlit as st
 
 Notice that the full search result payload is being printed to the terminal. We'll use this to gradually edit the source code of app.py to add Search Facets
 
-Remember, it's 2023 and cheating is allowed. If you get stuck, you can always ask ChatGPT how to do something as long as the tech was being talked about on the we back in 2021.
+Remember, it's 2023 and cheating is allowed. If you get stuck, you can always ask ChatGPT how to do something as long as the tech was being talked about on the web back in 2021.
 ![Using ChatGPT](cheatingallowed.jpg)
 
-However! ChatGPT may recommend you to change back to using 7.X stlye Elasticsearch python paramters like "body" and "_source". This isn't necessary.  You just need to start using the aggregations parameter of the .search function.
+However! ChatGPT may recommend you change back to using 7.X style Elasticsearch Python paramters like "body" and "_source". This isn't necessary or correct going forward.  You just need to start using the aggregations parameter of the .search function.
 
 The documentation for 8.10 (the time of writing this exercise) is here: [Documentation for .search()](https://elasticsearch-py.readthedocs.io/en/v8.10.0/api.html#elasticsearch.Elasticsearch.search)
 
@@ -141,13 +141,13 @@ Now the search result that prints to the terminal has an aggregations section we
 ```
 ## Step 5 - Rendering the Facets
 
-First we'll need some extra space in our UI.  Add the following near the top of your ```app.py``` to put Streamlit's layout into wide mode
+First, we'll need some extra space in our UI.  Add the following near the top of your ```app.py``` to put Streamlit's layout into "wide mode"
 
 ```python
 st.set_page_config(layout="wide")
 ```
 
-Up at the top we'll create a new session variable to track the state of facet selections.
+Up at the top, we'll create a new session variable to track the state of facet selections.
 
 ```python
 if "facet_selections" not in st.session_state:
@@ -155,7 +155,7 @@ if "facet_selections" not in st.session_state:
 ```
 
 
-Next we'll change how we render results so that the facets are to the left of the results list by using columns:
+Next, we'll change how we render results so that the facets are to the left of the results list by using columns:
 
 ```python
     f"Results {result_count} of {hit_count}"
@@ -208,7 +208,7 @@ Next we'll change how we render results so that the facets are to the left of th
 ```
 
 The actual facets are driven by the aggregations return.
-When we detect that a change has occurred vs the most recent sessions state, we re-run the query and then force a page re-load.
+When we detect that a change has occurred vs. the most recent sessions state, we re-run the query and then force a page re-load.
 
 We are now rendering the facets.
 
@@ -216,7 +216,7 @@ We are now rendering the facets.
 
 ## Step 6 - Make the facets change the search
 
-Clicking the facets doesn't currently do anything. To have them effect the search we need to build a compound query.  The facet_index we saved into the session state is a delimited value carrying both the field and value sparated by a ```|```
+Clicking the facets doesn't currently do anything. To have them effect the search we need to build a compound query.  The facet_index we saved into the session state is a delimited value carrying both the field and value separated by a ```|```
 
 ```python
     queries = []
@@ -242,9 +242,9 @@ Clicking the facets doesn't currently do anything. To have them effect the searc
 
 ## Step 7 - make sure the search button clears the facet selections
 
-UI design can get complex, so there's more than one way to do this. It's possible to change the search box still have a facet selected. This could lead to the facet being applied to the search but then the UI element for it not being rendered.  We don't want to get stuck unable to reset the facets when we have so many filters applied that there are no hits.
+UI design can get complex, so there's more than one way to do this. It's possible to change the search box and still have a facet selected. This could lead to the facet being applied to the search but then the UI element for it not being rendered.  We don't want to get stuck, unable to reset the facets when we have so many filters applied that there are no hits.
 
-An easy way past this is to build a reset button, or to reset the facet_selections when the search button is hit.
+An easy way past this is to build a reset button or to reset the facet_selections when the search button is hit.
 
 Edit the search button to do the following:
 
