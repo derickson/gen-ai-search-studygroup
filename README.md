@@ -28,3 +28,8 @@ We won't teach Python here, but we'll take things slowly and keep it as simple a
 * [Week 1](class/week01/README.md) - Environment Setup
 * [Week 2](class/week02/README.md) - Elasticsearch Python
 * [Week 3](class/week03/README.md) - Streamlit
+* Week 4 - Connecting to ChatGPT
+* Week 5 - Ingest Processors and NER
+* Week 6 - Chunking and Vector Embeddings
+* Week 7 - Vector Search and Subdocument Hits
+* Week 8 - RAG in Streamlit
