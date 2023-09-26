@@ -96,7 +96,7 @@ https://stackoverflow.com/questions/1534210/use-different-python-version-with-vi
 
 ### What about conda?
 
-There is a data science project called conda that does a lot of what venv does package management for multiple languages used in data science, including Python, simultaneously.  If you know what you are doing, by all means, use conda.
+There is a data science project called conda that does a lot of what venv like package management for multiple languages used in data science, including Python, simultaneously.  If you know what you are doing, by all means, use conda.
 
 ## Step 4 - using pip
 
@@ -130,9 +130,9 @@ source env/bin/activate
 pip install -r requirements.txt ## get the specific requirements from your file
 ```
 
-### Side note - use ChatGPT when you can remember how to do something
+### Side note - use ChatGPT when you can't remember how to do something
 
-It really will change the way you code, and reduce the number of things you have to remember
+It really will change the way you code, and reduce the number of things you have to remember.  ChatGPT isn't always right, as we'll see later in week3, but it is your ally in working Python without having to remember every little thing about the language.
 
 ![screenshot-3.jpg](screenshot-3.jpg)
 
