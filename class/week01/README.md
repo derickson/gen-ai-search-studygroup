@@ -42,7 +42,7 @@ You need a real IDE.  There are plenty of good ones out there. Visual Studio Cod
 
 https://code.visualstudio.com/
 
-Install it and get it to the point where you can execute the simple test script in this directory by hitting the play button in the upper right.  This might involve you needing to follow some prompts from Visual Studio Code to setup Python plugins and extensions.
+Install it and get it to the point where you can execute the simple test script in this directory by hitting the play button in the upper right.  This might involve you needing to follow some prompts from Visual Studio Code to set up Python plugins and extensions.
 
 ![screenshot-1.jpg](screenshot-1.jpg)
 
@@ -57,7 +57,7 @@ They'll let you launch a whole directory as a project from the terminal by typin
 % code .
 ```
 
-## Step 3 use a Python virtual environment
+## Step 3 Use a Python virtual environment
 
 By default, when you start installing libraries into your Python environment they'll go to the global folder for the Python install. This is a huge problem once you are working on different projects that need different versions of libraries for compatibility reasons.  For this reason, per-project you are going to create a "virtual environment" to keep everything isolated.
 
@@ -69,7 +69,7 @@ python3 -m venv env
 
 this uses the virtual environment module of Python to create a virtual environment in a new folder called env.
 
-Make sure your .gitignore file has an entry for env so you don't check anything from this folder in.
+Make sure your .gitignore file has an entry for env so you don't check in anything from this folder .
 
 Tell your terminal to start working with this Python environment with the following command
 
@@ -83,24 +83,24 @@ Notice that the command line gets a ```(env)``` put at the start of it to let yo
 
 With this done, from here on out any terminal or tool using these environments will install and use libraries from the env first rather than global saving us lots of frustration with incompatible versions of libraries.
 
-When you are done and don't want to use a virtual environment any more, close the termainal or use the deactivate command
+When you are done and don't want to use a virtual environment anymore, close the terminal or use the deactivate command
 
 ```bash
 deactivate
 ```
 
-If you have multiple version of Python installed on your machine and you want your python environment to use a specific version read the following to learn how that works
+If you have multiple versions of Python installed on your machine and you want your Python environment to use a specific version read the following to learn how that works
 
 https://stackoverflow.com/questions/1534210/use-different-python-version-with-virtualenv
 
 
 ### What about conda?
 
-There is a data science project called conda that does a lot of what venv does package management for multiple languages used in data science, including Python, simulataneousy.  If you know what you are doing, by all means use conda.
+There is a data science project called conda that does a lot of what venv does package management for multiple languages used in data science, including Python, simultaneously.  If you know what you are doing, by all means, use conda.
 
 ## Step 4 - using pip
 
-Once we have activated our Python virtual environment it is now safe to start installing libraries.  Pip comes with python and is the main package installer.
+Once we have activated our Python virtual environment it is now safe to start installing libraries.  Pip comes with Python and is the main package installer.
 
 try the following
 
@@ -124,7 +124,7 @@ Try it and take a look at the file.  The freeze command preserves the exact vers
 Once you've saved the requirements.txt file you don't have to worry about losing your env folder.  The following get you right back where you started:
 
 ```bash
-rm -rf env ## obviously be very careful with this command
+rm -rf env ## Obviously be very careful with this command
 python3 -m venv env
 source env/bin/activate
 pip install -r requirements.txt ## get the specific requirements from your file
@@ -138,15 +138,15 @@ It really will change the way you code, and reduce the number of things you have
 
 ## Work with secrets files
 
-You'll need to work with passwords a lot as you want to access thigns like Elasticsearch and 3rd party cloud services.  You need to get in the habit of not hard coding passwords into your source code.  For this study group we'll use  the dotenv library to manage our passwords in a file named ".env" .  The dotenv python library will load the contents of this file which we will **NOT**  never into github into environment variables at the start of our Python code.  This will transition well to when we deploy code in production and need to use other tech like Docker or Kubernetes that assumes you pass in secrets using environment variables .
+You'll need to work with passwords a lot as you want to access things like Elasticsearch and 3rd party cloud services.  You need to get in the habit of not hard-coding passwords into your source code.  For this study group, we'll use the dotenv library to manage our passwords in a file named ".env" .  The dotenv python library will load the contents of this file which we will **NOT**  never into GitHub into environment variables at the start of our Python code.  This will transition well to when we deploy code in production and need to use another tech like Docker or Kubernetes that assumes you pass in secrets using environment variables.
 
 Create a text file named .env that has the following contents
 
 ```txt
-MY_SECRET = "I'm always agry"
+MY_SECRET = "I'm always angry"
 ```
 
-Making sure your Python virtual environment is activated, run the following pip install
+To make sure your Python virtual environment is activated, run the following pip install
 
 ```bash
 pip install python-dotenv
@@ -177,6 +177,6 @@ if you cut and paste the above code into a file called ```app.py``` you can then
 python app.py
 ```
 
-as long as your enviroment variables are all setup the printout should have your secret.
+as long as your environment variables are all set up the printout should have your secret.
 
-If you get an error talking about how dotenv or load_dotenv, it means your virtual enviornment and pip step to install dotenv has not been done correctly.
+If you get an error talking about dotenv or load_dotenv, it means your virtual environment and pip step to install dotenv have not been done correctly.
