@@ -2,9 +2,9 @@
 
 ## Objective
 
-The goal here is to help you learn just enough to be able to rapid protypes uising Search and AI.
+The goal here is to help you learn just enough to be able to rapid prototype using Search and AI.
 
-While it has never been easier to learn search and AI, it's hard to find know where to start.  Equally, javascript and building user interfaces has turned into a specialist skill.
+While it has never been easier to learn search and AI, it's hard to know where to start.  Equally, Javascript and building user interfaces have sadly turned into specialist skills.
 
 [Youtube - Should you Learn Javascript?](https://www.youtube.com/watch?v=Uo3cL4nrGOk)
 
@@ -20,7 +20,7 @@ We won't teach Python here, but we'll take things slowly and keep it as simple a
 ```txt
 /
 / class  -- clean examples, week by week
-/ class/week01 - self contained resources and guides for this week's learning
+/ class/week01 - self-contained resources and guides for this week's learning
 ```
 
 ## Week by Week Materials
