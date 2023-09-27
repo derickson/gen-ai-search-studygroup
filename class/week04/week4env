@@ -1,0 +1,25 @@
+# must be set for OpenAI or AzureOpenAI
+OPENAI_API_KEY=""
+
+# must be set for AzureOpenAI
+AZURE_OPENAI_API_KEY=""
+AZURE_OPENAI_API_INSTANCE_NAME="https://YOUR_ENDPOINT_FROM_AZURE.com"
+AZURE_OPENAI_API_DEPLOYMENT_NAME=""
+AZURE_OPENAI_API_TYPE="azure"
+AZURE_OPENAI_API_VERSION="2023-05-15"
+
+# Connection details for your Elasticsearch cluster from week 2
+ELASTIC_CLOUD_ID=""
+ELASTIC_USER=""
+ELASTIC_PASSWORD=""
+
+# this is the project name in the top left of your cloud.google.com console
+GOOGLE_PROJECT_NAME=""
+
+## for hosting Llama2 on Hugging Face
+HUGGINGFACEHUB_API_TOKEN=""
+LLAMA2_HF_URL=""
+
+## for an OpenAI API chat through a proxy
+PROXY_OPENAI_API_KEY=""
+PROXY_OPENAI_API_BASE="HTTPS://YOUR URL ENDING IN /v1"
