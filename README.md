@@ -1,4 +1,27 @@
-# gen-ai-search-studygroup
+# GenAI Search Study Group
+
+## Week by Week Materials
+
+* [Week 1](class/week01/README.md) - Environment Setup
+* [Week 2](class/week02/README.md) - Elasticsearch Python
+* [Week 3](class/week03/README.md) - Streamlit
+* [Week 4](class/week04/README.md) - Connecting to LLMs
+* Week 5 - Ingest Processors and NER
+* Week 6 - Chunking and Vector Embeddings
+* Week 7 - Vector Search and Subdocument Hits
+* Week 8 - RAG in Streamlit
+
+# Pics of what we'll build
+
+Week2
+![Search App](class/week02/search.jpg)
+
+Week3
+![Search Facets](class/week03/facets.jpg)
+
+Week4
+![Chat Loops](class/week04/img/LLMChat.jpg)
+
 
 ## Objective
 
@@ -23,13 +46,3 @@ We won't teach Python here, but we'll take things slowly and keep it as simple a
 / class/week01 - self-contained resources and guides for this week's learning
 ```
 
-## Week by Week Materials
-
-* [Week 1](class/week01/README.md) - Environment Setup
-* [Week 2](class/week02/README.md) - Elasticsearch Python
-* [Week 3](class/week03/README.md) - Streamlit
-* [Week 4](class/week04/README.md) - Connecting to ChatGPT
-* Week 5 - Ingest Processors and NER
-* Week 6 - Chunking and Vector Embeddings
-* Week 7 - Vector Search and Subdocument Hits
-* Week 8 - RAG in Streamlit

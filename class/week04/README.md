@@ -2,7 +2,7 @@
 
 ## Learning Objectives
 
-* Connecting to GenAI
+* Connecting to GenAI LLMs
 * Langchain basics
 * Creating a simple chat loop in Streamlit
 
