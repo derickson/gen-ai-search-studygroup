@@ -98,8 +98,23 @@ if text_area:
 Remember, there is no shame in just asking ChatGPT how to do some of the complex tasks of coding. Regular expressions are only fun for some people (not me)
 ![cheating allowed](img/cheatingallowed.jpg)
 
+
 Refer to the documentation for the annotated_text widget and process the text as enriched by that NER model in Elasticsearch
 ![ner streamlit](img/ner_streamlit.jpg)
+
+Here'e what I asked ChatGPT-4
+```txt
+in python, take a string like this
+
+My name is [Jonas](PER&Jonas), and I am cool guy
+
+and turn it into a  list of tuples like this
+
+[("My name is "),("Jonas","PER"),(", and I am cool guy"]
+```
+
+It makes python code that is almost perfect. Try to write the code by yourself or using ChatGPT.  If you get stuck (or don't have access to GPT-4, which does better than GPT-3) the answer is in ```answer.py```
+
 
 ### Side Note - Recognition vs Resolution
 
