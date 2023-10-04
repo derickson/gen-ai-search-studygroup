@@ -6,7 +6,7 @@
 * [Week 2](class/week02/README.md) - Elasticsearch Python
 * [Week 3](class/week03/README.md) - Streamlit
 * [Week 4](class/week04/README.md) - Connecting to LLMs
-* Week 5 - Ingest Processors and NER
+* [Week 5](class/week05/README.md) - Ingest Processors and NER
 * Week 6 - Chunking and Vector Embeddings
 * Week 7 - Vector Search and Subdocument Hits
 * Week 8 - RAG in Streamlit
