@@ -9,6 +9,10 @@
 ![What it looks like when done](facets_done.jpg)
 
 
+## Step 0 - Update
+
+Do a ```git pull``` on the repo, there may have been changes since this week first posted
+
 ## Step 1 - Streamlit Getting Started
 
 Go through the Streamlit.io getting started examples. They are pretty good and will teach you some important concepts we'll use right away to organize a modular Streamlit project to host search examples.
