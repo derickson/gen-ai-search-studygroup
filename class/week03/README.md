@@ -379,9 +379,9 @@ if "search_results" in st.session_state :
     r1, r2 = st.columns([1,3])
     with r1:
         aggs = st.session_state.search_aggs if "search_aggs" in st.session_state else {}
+        change_detected = False
         for key in aggs:
             field_name = key.replace("_facets","")
-            change_detected = False
             f"#### {field_name}"
             for bucket in aggs[key]["buckets"]:
                 facet_value = bucket['key']
