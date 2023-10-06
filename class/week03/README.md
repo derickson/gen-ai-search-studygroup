@@ -121,6 +121,7 @@ def runKeywordSearch(input):
     print(json_pretty(response.body))
 
     st.session_state.search_results = response["hits"]
+    st.session_state.search_aggs = response["aggregations"]
 ```
 
 Now the search result that prints to the terminal has an aggregations section we'll be able to use to add the UI for search facets.
