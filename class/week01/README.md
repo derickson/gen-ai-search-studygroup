@@ -124,6 +124,10 @@ Try it and take a look at the file.  The freeze command preserves the exact vers
 Once you've saved the requirements.txt file you don't have to worry about losing your env folder.  The following get you right back where you started:
 
 ```bash
+deactivate
+```
+
+```bash
 rm -rf env ## Obviously be very careful with this command
 python3 -m venv env
 source env/bin/activate
