@@ -146,7 +146,7 @@ Now the search result that prints to the terminal has an aggregations section we
 ```
 ## Step 5 - Rendering the Facets
 
-First, we'll need some extra space in our UI.  Add the following near the top of your ```app.py``` to put Streamlit's layout into "wide mode"
+First, we'll need some extra space in our UI.  Add the following near the top of your code to put Streamlit's layout into "wide mode"
 
 ```python
 st.set_page_config(layout="wide")
