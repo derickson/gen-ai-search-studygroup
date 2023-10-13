@@ -7,21 +7,26 @@
 * [Week 3](class/week03/README.md) - Streamlit
 * [Week 4](class/week04/README.md) - Connecting to LLMs
 * [Week 5](class/week05/README.md) - Ingest Processors and NER
-* Week 6 - Chunking and Vector Embeddings
-* Week 7 - Vector Search and Subdocument Hits
-* Week 8 - RAG in Streamlit
+* [Week 6](class/week06/README.md) - Simple RAG App
+* Week 7 - ???
+* Week 8 - ???
 
 # Pics of what we'll build
 
-Week2
+### Week2
 ![Search App](class/week02/search.jpg)
 
-Week3
+### Week3
 ![Search Facets](class/week03/facets.jpg)
 
-Week4
+### Week4
 ![Chat Loops](class/week04/img/LLMChat.jpg)
 
+### Week 5
+![Analutics through Pipelines](class/week05/img/kibana.jpg)
+
+### Week 6
+![Simple RAG](class/week06/img/rag-app.jpg)
 
 ## Objective
 
