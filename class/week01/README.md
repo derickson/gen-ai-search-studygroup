@@ -124,6 +124,10 @@ Try it and take a look at the file.  The freeze command preserves the exact vers
 Once you've saved the requirements.txt file you don't have to worry about losing your env folder.  The following get you right back where you started:
 
 ```bash
+deactivate
+```
+
+```bash
 rm -rf env ## Obviously be very careful with this command
 python3 -m venv env
 source env/bin/activate
@@ -138,9 +142,9 @@ It really will change the way you code, and reduce the number of things you have
 
 ## Work with secrets files
 
-You'll need to work with passwords a lot as you want to access things like Elasticsearch and 3rd party cloud services.  You need to get in the habit of not hard-coding passwords into your source code.  For this study group, we'll use the dotenv library to manage our passwords in a file named ".env" .  The dotenv python library will load the contents of this file which we will **NOT**  never into GitHub into environment variables at the start of our Python code.  This will transition well to when we deploy code in production and need to use another tech like Docker or Kubernetes that assumes you pass in secrets using environment variables.
+You'll need to work with passwords a lot as you want to access things like Elasticsearch and 3rd party cloud services.  You need to get in the habit of not hard-coding passwords into your source code.  For this study group, we'll use the dotenv library to manage our passwords in a file named ".env" .  The dotenv python library will load the contents of this file *which we will **never** commit into GitHub* into environment variables at the start of our Python code.  This will transition well to when we deploy code in production and need to use another tech like Docker or Kubernetes that assumes you pass in secrets using environment variables.
 
-Create a text file named .env that has the following contents
+While INSIDE the virtual environment, create a text file named .env that has the following contents
 
 ```txt
 MY_SECRET = "I'm always angry"
