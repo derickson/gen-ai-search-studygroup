@@ -141,7 +141,7 @@ Let's make a copy of the app from week 3 to add facets for the NER fields
 ```bash
 ## from the week05 folder
 cd app
-cp week3_sotfu.py week5_sotfu.py
+cp pages/week3_sotfu.py pages/week5_sotfu.py
 streamlit run app.py
 ```
 
