@@ -107,7 +107,7 @@ try the following
 ```bash
 cd gen-ai-search-studygroup
 source env/bin/activate
-pip install openai
+pip install openai==0.28.1
 ls env/lib/python3.9/site-packages/openai ## or similar depending on your Python version
 ```
 
@@ -156,7 +156,12 @@ To make sure your Python virtual environment is activated, run the following pip
 pip install python-dotenv
 ```
 
-Now create a Python program that looks like the following and run it in your IDE or terminals
+
+### ❗❗ Change Directory to /class/week01 ❗❗
+Everything we've been doing so far has been in the root directory of the project. As we are about to start saving files, make your changes in the class/week01 subfolder
+
+
+Now create a Python program (in the class/week01 folder) that looks like the following and run it in your IDE or terminals
 
 ```python
 ## import a python library for working with the OS
