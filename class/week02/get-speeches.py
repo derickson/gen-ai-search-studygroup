@@ -21,6 +21,11 @@ def convert_to_iso(date_str):
 ## State of the Union Addresses can be found here: https://www.govinfo.gov/features/state-of-the-union
 speech_links = [
   {
+    "date": "March 7, 2024",
+    "administration": "Biden",
+    "url": "https://www.govinfo.gov/content/pkg/DCPD-202400170/html/DCPD-202400170.htm"
+  },
+  {
     "date": "February 7, 2023",
     "administration": "Biden",
     "url": "https://www.govinfo.gov/content/pkg/CREC-2023-02-07/html/CREC-2023-02-07-pt1-PgS257-2.htm"

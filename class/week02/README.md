@@ -26,7 +26,7 @@ Making sure our virtual environment at the root directory of the project is acti
 source env/bin/activate
 cd class/week02
 python3 -m pip install --upgrade pip ## never hurts
-pip install beautifulsoup4 elasticsearch tqdm requests
+pip install beautifulsoup4==4.12.2 elasticsearch==8.10 tqdm==4.66 requests==2.31
 ```
 
 To get some full-text data to put into Elasticsearch, we are going to do a simple web scrape of the last 30 years of presidential State of the Union addresses from https://www.govinfo.gov/features/state-of-the-union
@@ -55,7 +55,7 @@ When you have it working, the code will print Elasticsearch's tagline "You Know,
 
 ## Step 4 - Let's use a Python Notebook
 
-Open [first_notebook.ipynb](first_notebook.ipynb) in your Visual Studio Code editor.  If this is your first time doing this, you'll need to install a bunch of plugins.  Once open, you'll need to select a *kernel* in the top right corner of the open Notebook editor.  Select the 'Python Environments' option and pick the virtual environment at the root of this project.
+Open [first_notebook.ipynb](first_notebook.ipynb) in your Visual Studio Code editor.  If this is your first time doing this, you'll need to install a bunch of plugins to visual studio code. The IDE should prompt you.  Once open, you'll need to select a *kernel* in the top right corner of the open Notebook editor.  Select the 'Python Environments' option and pick the virtual environment at the root of this project.
 
 The Python notebook player in Visual Studio code is pretty good, though not as pretty or easy to use as Google Colab. For example ```input()``` commands create a text box at the top of the window instead of inline with output which can be disorienting.
 
