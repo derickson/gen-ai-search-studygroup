@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 
 ## put at the top of the page
 import openai
-from langchain.chat_models import ChatOpenAI
+from langchain_community.chat_models import ChatOpenAI
 from dotenv import load_dotenv
 load_dotenv("../../.env", override=True)
 
