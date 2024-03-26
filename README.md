@@ -1,5 +1,9 @@
 # GenAI Search Study Group
 
+## Archive of v1
+Lots of libraries have changes ... I'm archiving this copy of the code so that I can make a new version which libraries pinned.
+
+
 ## Week by Week Materials
 
 * [Week 1](class/week01/README.md) - Environment Setup
