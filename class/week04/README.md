@@ -32,8 +32,6 @@ You'll need API keys for all of these, which you'll need to configure yourself i
 
 * [Google Vertex](GoogleVertex_Basics.ipynb)
 
-* [Llama2 on Hugging Face Inference Endpoints](Llama2_HuggingFaceIE.ipynb)
-
 
 
 ### LangChain
@@ -46,7 +44,6 @@ You'll need API keys for all of these, which you'll need to configure yourself i
 
 * [LangChain Google Vertex](GoogleVertex_LangChain.ipynb)
 
-* [LangChain Llama2 on Hugging Face Inference Endpoints](Llama2_HuggingFaceIE_LangChain.ipynb)
 
 
 ## Step 3 - Take the LangChain Quickstart
@@ -80,6 +77,8 @@ Double check you've copied over the Elasticsearch connection details from week3 
 ```bash
 streamlit run app.py
 ```
+
+Create a new subfodler of ```app``` called ```pages```
 
 In the ```app/pages/``` folder create a new python file called ```week4_echo_chat.py```
 
@@ -143,14 +142,6 @@ with st.container():
             st.write(msg["message"])
 ```
 
-## IMPORTANT LANGCHAIN NOTE - make sure you are running version 0.0.303 of LangChain
-
-Some of the code I'm going to use in this app is newer and requires a specific version of LangChain or higher
-
-Making sure your virtual environment is active, run the following
-```bash
-pip install langchain==0.0.303
-```
 
 
 ## Step 5 - Let's talk to an LLM
