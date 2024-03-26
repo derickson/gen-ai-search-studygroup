@@ -7,6 +7,9 @@ class/week05/app
 class/week05/data/*
 class/week06/app
 
+
+models
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

@@ -32,7 +32,7 @@ You'll need API keys for all of these, which you'll need to configure yourself i
 
 * [Google Vertex](GoogleVertex_Basics.ipynb)
 
-* [Llama2 on Hugging Face Inference Endpoints](Llama2_HuggingFaceIE.ipynb)
+* [AWS Bedrock](Bedrock_Basics.ipynb)
 
 
 
@@ -46,7 +46,8 @@ You'll need API keys for all of these, which you'll need to configure yourself i
 
 * [LangChain Google Vertex](GoogleVertex_LangChain.ipynb)
 
-* [LangChain Llama2 on Hugging Face Inference Endpoints](Llama2_HuggingFaceIE_LangChain.ipynb)
+* [LangChain AWS Bedrock](Bedrock_LangChain.ipynb)
+
 
 
 ## Step 3 - Take the LangChain Quickstart
@@ -80,6 +81,8 @@ Double check you've copied over the Elasticsearch connection details from week3 
 ```bash
 streamlit run app.py
 ```
+
+Create a new subfodler of ```app``` called ```pages```
 
 In the ```app/pages/``` folder create a new python file called ```week4_echo_chat.py```
 
@@ -122,35 +125,27 @@ Let's create a really dumb non-langchain echo bot.
 Create a chat history that is just a big array of objects
 ```python
 #### Define the chat history
-if "memory" not in st.session_state:
-    st.session_state.memory =  []
+if "echo_memory" not in st.session_state:
+    st.session_state.echo_memory =  []
 ```
 
 Now every time we get new input add the user's chat and an annoying response from the AI that is just an echo of the same message.
 ```python
 ## This is what to do when a new human input chat is received
 def next_message(human_input):
-    st.session_state.memory.append({"role":"user","message":human_input})
-    st.session_state.memory.append({"role":"ai","message":human_input})
+    st.session_state.echo_memory.append({"role":"user","message":human_input})
+    st.session_state.echo_memory.append({"role":"ai","message":human_input})
 ```
 
 Last we need to render the chat messages
 ```python
 #### Loop through the conversation state and create chat messages
 with st.container():
-    for msg in st.session_state.memory:
+    for msg in st.session_state.echo_memory:
         with st.chat_message(msg["role"]):
             st.write(msg["message"])
 ```
 
-## IMPORTANT LANGCHAIN NOTE - make sure you are running version 0.0.303 of LangChain
-
-Some of the code I'm going to use in this app is newer and requires a specific version of LangChain or higher
-
-Making sure your virtual environment is active, run the following
-```bash
-pip install langchain==0.0.303
-```
 
 
 ## Step 5 - Let's talk to an LLM
@@ -165,7 +160,7 @@ Pick the LLM LangChain you'd like to chat with from step 2 above and give this p
 Swap out the memory for a LangChain conversation buffer
 ```python
 #### Define the chat history
-if "memory" not in st.session_state:
+if "llm_memory" not in st.session_state:
     st.session_state.memory =  ConversationBufferWindowMemory(k=5)
 ```
 
@@ -176,7 +171,7 @@ Change the rendering of chat history
 ```python
 #### Loop through the conversation state and create chat messages
 with st.container():
-    for message in st.session_state.memory.buffer_as_messages:
+    for message in st.session_state.llm_memory.buffer_as_messages:
         with st.chat_message("user" if message.type == 'human' else 'assistant' ):
             st.markdown(message.content)
 ```
@@ -186,7 +181,7 @@ Now we need to create the Large Language Model itself.  We'll do this in the ```
 ```python
 ## put at the top of the page
 import openai
-from langchain.chat_models import ChatOpenAI
+from langchain_community.chat_models import ChatOpenAI
 from dotenv import load_dotenv
 load_dotenv("../.env", override=True)
 
@@ -230,7 +225,7 @@ if "conversation" not in st.session_state:
         prompt=PROMPT,
         llm=load_openai_llm(),
         verbose=True,
-        memory=st.session_state.memory,
+        memory=st.session_state.llm_memory,
     )
 ```
 
@@ -238,7 +233,7 @@ We are almost there! the next step is changing the way human_input is fed into t
 ```python
 ## When a new human chat is received
 def next_message(human_input):
-    st.session_state.conversation.run(human_input)
+    st.session_state.conversation.predict(input=human_input)
 ```
 
 I lied.  Add a button to clear the memory.  Replace the header with the following
@@ -249,7 +244,7 @@ with col1:
     st.title('YOUR HEADER')
 with col2:
     if st.button("Clear Memory"):
-        st.session_state.memory.clear()
+        st.session_state.llm_memory.clear()
 ```
 
 ![What it looks like up to this point](img/LLMChat.jpg)
