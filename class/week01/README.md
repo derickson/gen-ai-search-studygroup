@@ -142,12 +142,24 @@ It really will change the way you code, and reduce the number of things you have
 
 ## Work with secrets files
 
+
+
 You'll need to work with passwords a lot as you want to access things like Elasticsearch and 3rd party cloud services.  You need to get in the habit of not hard-coding passwords into your source code.  For this study group, we'll use the dotenv library to manage our passwords in a file named ".env" .  The dotenv python library will load the contents of this file *which we will **never** commit into GitHub* into environment variables at the start of our Python code.  This will transition well to when we deploy code in production and need to use another tech like Docker or Kubernetes that assumes you pass in secrets using environment variables.
 
-While INSIDE the virtual environment, create a text file named .env that has the following contents
+While working with an active virtual environment, create a text file named .env in the week01 folder that has the following contents
 
 ```txt
 MY_SECRET = "I'm always angry"
+```
+
+❗❗❗ Note: from here on out we are assuming you'll have a ```.env``` file located in each weekly folder like the following
+
+```
+- class
+- -  week01
+- - -  .env
+- -  week02
+- - -  .env
 ```
 
 To make sure your Python virtual environment is activated, run the following pip install

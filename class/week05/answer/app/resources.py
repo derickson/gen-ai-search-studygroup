@@ -5,10 +5,26 @@ from elasticsearch import Elasticsearch
 from dotenv import load_dotenv
 
 
+## put at the top of the page
+import openai
+from langchain_community.chat_models import ChatOpenAI
+from dotenv import load_dotenv
+load_dotenv("../../.env", override=True)
+
+## use the @ annotation for a resource so that Streamlit will cache this thing
+@st.cache_resource
+def load_openai_llm():
+    openai.api_key = os.environ["OPENAI_API_KEY"]
+    default_model = "gpt-3.5-turbo"
+    llm = ChatOpenAI(
+        temperature=0.3,
+        model=default_model
+    )
+    return llm
+
+
 @st.cache_resource
 def get_es():
-    load_dotenv("../../.env", override=True)
-
     es = None
 
     if 'ELASTIC_CLOUD_ID' in os.environ:
