@@ -32,6 +32,8 @@ You'll need API keys for all of these, which you'll need to configure yourself i
 
 * [Google Vertex](GoogleVertex_Basics.ipynb)
 
+* [AWS Bedrock](Bedrock_Basics.ipynb)
+
 
 
 ### LangChain
@@ -43,6 +45,8 @@ You'll need API keys for all of these, which you'll need to configure yourself i
 * [LangChain Azure OpenAI](AzureOpenAI_LangChain.ipynb)
 
 * [LangChain Google Vertex](GoogleVertex_LangChain.ipynb)
+
+* [LangChain AWS Bedrock](Bedrock_LangChain.ipynb)
 
 
 
