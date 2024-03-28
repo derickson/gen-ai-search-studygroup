@@ -8,8 +8,7 @@
 * [Week 4](class/week04/README.md) - Connecting to LLMs
 * [Week 5](class/week05/README.md) - Ingest Processors and NER
 * [Week 6](class/week06/README.md) - Simple RAG App
-* Week 7 - ???
-* Week 8 - ???
+
 
 # Pics of what we'll build
 
@@ -49,5 +48,7 @@ We won't teach Python here, but we'll take things slowly and keep it as simple a
 /
 / class  -- clean examples, week by week
 / class/week01 - self-contained resources and guides for this week's learning
+/ class/week0X/.env - this is where you'll be expected to put your private passwords for each week
+/ class/week0X/answer - sometimes I'll leave the completed app here to help you if you get stuck
 ```
 
